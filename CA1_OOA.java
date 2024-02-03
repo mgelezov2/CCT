@@ -18,6 +18,7 @@ import java.util.stream.Stream;
  *
  * @author michael
  */
+//NOTE: Manual edit for the directory that students.txt and status.txt are located need to be changed to the users directory.
 
 //UNFINISHED CHANGES
 //IMPLEMENT USER INPUT DATA TO FILE MANUALLY
