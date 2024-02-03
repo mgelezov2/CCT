@@ -13,3 +13,12 @@ import java.util.InputMismatchException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
+
+/**
+ *
+ * @author michael
+ */
+
+//UNFINISHED CHANGES
+//IMPLEMENT USER INPUT DATA TO FILE MANUALLY
+//MAKE IF STATEMENTS FOR SUBJECT NUMBER VALIDATION MORE PRESENTABLE
