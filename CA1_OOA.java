@@ -120,3 +120,29 @@ public class CA1_OOA {
                }else{
                   System.out.println("Error student number is invalid!");      
                }
+               //WRITES THE WHOLE LIST FROM STUDENT.TXT TO STATUS.TXT
+            System.out.println(stListValidation.size());
+            int arrayCount = stListValidation.size();
+               if (arrayCount == 4){ 
+                  // studentWriteTxt.write(lineProcessed + "\n");
+                   studentWriteTxt.write("\n" + splitStudentData[2] + "-" + splitStudentData[1] + "\n" + workLoadReplace);
+                   stListValidation.removeAll(stListValidation);
+            
+               }
+             }
+            studentReadTxt.close();
+            studentWriteTxt.close();
+     
+    
+            
+//ERROR EXCEPTION CATCHES
+}catch(FileNotFoundException e){
+     System.out.println("Error: The file you're trying to access is missing from the directory!");
+     e.printStackTrace();
+    }catch (InputMismatchException e) {
+     System.out.println("Error: The Data does not match records!");
+     e.printStackTrace();
+    }
+    
+}
+}
