@@ -34,3 +34,27 @@ public class CA1_OOA {
             BufferedReader studentReadTxt = new BufferedReader(new FileReader("/home/michael/NetBeansProjects/CA1_OOA/students.txt"));   
             ArrayList<String> stListValidation = new ArrayList<>();        
             BufferedWriter studentWriteTxt = new BufferedWriter(new FileWriter("/home/michael/NetBeansProjects/CA1_OOA/status.txt", false));
+            //FOR LOOP REITERATION GOING LINE BY LINE
+            Stream<String> fileStream = Files.lines(Paths.get("students.txt"));
+            int noOfLines = (int) fileStream.count();
+            for (int i = 0; i < noOfLines; i++) {
+                 String lineInProgress = studentReadTxt.readLine();
+                 // String lineProcessed = lineInProgress;
+                 String[] splitStudentData = lineInProgress.split(" ");
+     
+   
+                //VALIDATE FIRST NAME   
+                if(splitStudentData[0].matches("[a-zA-Z]+")){
+                   stListValidation.add(splitStudentData[0]);
+                 }
+                 else{ 
+                   System.out.println("Error first name invalid!");      
+                 }
+
+               //VALIDATE SECOND NAME    
+               if(splitStudentData[1].matches("[a-zA-Z ']+|[0-9]+")){
+                  stListValidation.add(splitStudentData[1]);
+                }
+               else{
+                  System.out.println("Error second name invalid!");      
+                }
