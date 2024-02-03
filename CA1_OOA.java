@@ -22,3 +22,15 @@ import java.util.stream.Stream;
 //UNFINISHED CHANGES
 //IMPLEMENT USER INPUT DATA TO FILE MANUALLY
 //MAKE IF STATEMENTS FOR SUBJECT NUMBER VALIDATION MORE PRESENTABLE
+
+public class CA1_OOA {
+
+    /**
+     * @param args the command line arguments
+     */    
+    public static void main(String[] args) throws FileNotFoundException,InputMismatchException ,IOException {
+        try{
+            //FILE READER,WRITER AND MAIN ARRAY STORAGE
+            BufferedReader studentReadTxt = new BufferedReader(new FileReader("/home/michael/NetBeansProjects/CA1_OOA/students.txt"));   
+            ArrayList<String> stListValidation = new ArrayList<>();        
+            BufferedWriter studentWriteTxt = new BufferedWriter(new FileWriter("/home/michael/NetBeansProjects/CA1_OOA/status.txt", false));
