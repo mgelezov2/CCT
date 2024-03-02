@@ -43,3 +43,21 @@ public class Company_base extends Employee{
      
         return staff;
     }
+
+//CALCULATES AMOUNT OF STAFF MEMBERS IN THE ARRAY
+    public int getStaffNumber(){
+        int size = staff.size();
+        return size;
+    }
+    
+//RETURNS LIST OF EMPLOYEES AND CHECKS IF THEY ARE ON THE LIST
+//BUG: UNABLE TO RETURN A NAME OF THE TARGETTED EMPLOYEE BY EMPLOYEE NUMBER AS IT RETURNS NOTHING WHEN PROMPTED TO DO SO
+    public String listEmployees(int empNum){
+        Iterator<String> employeeList = staff.iterator();
+        while(employeeList.hasNext()){
+            if(employeeList.next().equals(String.valueOf(employee_comp.getNextEmpNum(empNum)))){
+            System.out.println("Current staff list: " + staff);
+            }
+        }
+        return null;
+    }
