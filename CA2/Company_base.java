@@ -121,3 +121,11 @@ public class Company_base extends Employee{
             System.out.println(manager_system.addNewStaff(nameInp, emailInp, empNumInp));
             
             break;
+        case 3: 
+            System.out.println(manager_system.listEmployees(empNumInp));
+            break;
+        case 4: 
+            System.out.println("Type employee number of the employee you wish to remove: ");
+            empNumInp = userInput.nextInt();
+            manager_system.removeStaff(empNumInp);
+            break;
