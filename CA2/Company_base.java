@@ -140,3 +140,24 @@ public class Company_base extends Employee{
 }
     
     }
+
+//MAIN CALL FOR TESTING THE ABOVE FUNCTIONS, UNCOMMENT THE TESTS BELOW TO RUN FUNCTIONS
+    public static void main(String[] args) {
+        
+//COMPANY METHODS TEST
+
+      // Company_base comp_test = new Company_base();
+       //System.out.println(comp_test.addNewStaff("John Doe", "jd@gmail.com", 123456));
+       //System.out.println(comp_test.getStaffNumber());
+      // System.out.println(comp_test.listEmployees(123456));
+      
+//MANAGER TEST
+
+      //Manager manager_test = new Manager();
+      //manager_test.managerConsole();
+      
+        
+    }
+
+    
+}
