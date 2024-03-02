@@ -44,3 +44,18 @@ public class Employee {
     public String setEmail(String email) {
 	return this.email = email;
     }
+
+//EMPLOYEE METHOD THAT RETURNS THE EMPLOYEE NUMBER OF THE EMPLOYEE
+    public int getEmpNum(int empNum) {
+	return empNum;
+    }
+    
+//EMPLOYEE METHOD THAT RETURNS THE CURRENT NUMBER OF THE EMPLOYEE   
+    public int getNextEmpNum(int empNum){
+        nextEmpNum = empNum;
+        return nextEmpNum;
+       
+    }
+    
+    
+    }
