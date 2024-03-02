@@ -129,3 +129,14 @@ public class Company_base extends Employee{
             empNumInp = userInput.nextInt();
             manager_system.removeStaff(empNumInp);
             break;
+        case 5: 
+            System.out.println("Exiting Menu");
+            break;
+        default:
+            System.out.println("Choice must be a value between 1 and 5.");
+    }   
+}while (choice != 5); 
+
+}
+    
+    }
