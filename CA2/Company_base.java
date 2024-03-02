@@ -26,3 +26,20 @@ public class Company_base extends Employee{
     public Company_base(String companyName){
         company_Name = companyName;
     }
+
+//ADDS NEW STAFF TO THE COMPANY ARRAY CALLED STAFF
+    public ArrayList<String> addNewStaff(String name, String email, int empNum){
+        staff.add(employee_comp.getName(name));
+        staff.add(employee_comp.getEmail(email));
+        staff.add(String.valueOf(employee_comp.getNextEmpNum(empNum)));
+        return staff;
+     }
+    
+//REMOVES AN EMPLOYEE BY EMPLOYEE NUMBER
+//BUG: UNABLE TO REMOVE EMPLOYEE DESPITE ENTERING STAFF NUMBER    
+    public ArrayList<String> removeStaff(int empNum){
+        staff.remove(employee_comp.getName(name));
+        staff.remove(employee_comp.getEmail(email));
+     
+        return staff;
+    }
