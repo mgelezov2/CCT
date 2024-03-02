@@ -29,3 +29,13 @@ public class Employee {
         nextEmpNum++;
         
     }
+
+//EMPLOYEE METHOD THAT RETURNS THE NAME OF THE EMPLOYEE
+    public String getName(String name) {
+	return name;
+    }
+    
+//EMPLOYEE METHOD THAT RETURNS THE EMAIL OF THE EMPLOYEE
+    public String getEmail(String email) {
+	return email;
+    }
