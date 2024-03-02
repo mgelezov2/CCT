@@ -91,3 +91,33 @@ public class Company_base extends Employee{
     public String setPassword(String managerPassword){
         return this.password = managerPassword;
     }
+
+//MANAGER CONSOLE DISPLAY THAT DISPLAYS THE LOG IN, ADD EMPLOYEES TO A LIST, VIEW CURRENT EMPLOYEES ON THAT LIST AND AN OPTION TO EXIT THE PROGRAM
+    public void managerConsole(){
+    do {
+    System.out.println("Enter \"1 to log in\", \"2 to add new employee\", \"3 to view current employees\" , \"4 to remove an employee\" or \"5 to exit\"");
+    choice = userInput.nextInt();
+    userInp = userInput.nextLine();
+    switch (choice)
+    {
+        case 1:
+        System.out.println("Please enter Username: ");
+        userInp = userInput.nextLine();
+        System.out.println("Please enter Password: ");
+        userPassInp = userInput.nextLine();
+        if(userInp.equals(setuserName("Gnomeo")) && userPassInp.equals(setPassword("Smurf"))){
+            System.out.println("Login successful!");
+        }else{
+            System.out.println("Login failed");
+        }
+            break;
+        case 2: 
+            System.out.println("Type name of the employee you wish to add: ");
+            nameInp = userInput.nextLine();
+            System.out.println("Type email of the employee you wish to add: ");
+            emailInp = userInput.nextLine();
+            System.out.println("Type employee number of the employee you wish to add: ");
+            empNumInp = userInput.nextInt();
+            System.out.println(manager_system.addNewStaff(nameInp, emailInp, empNumInp));
+            
+            break;
