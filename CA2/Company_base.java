@@ -61,3 +61,33 @@ public class Company_base extends Employee{
         }
         return null;
     }
+
+//MANAGER CLASS CONSOLE THAT EXTENDS TO COMPANY CLASS FOR USAGE OF ITS METHODS  
+    public static class Manager extends Company_base{
+    Company_base manager_system = new Company_base();
+    Scanner userInput = new Scanner(System.in);
+    int choice = 0;
+    String userName,password;
+    String userInp,userPassInp;
+    String nameInp, emailInp;
+    int empNumInp;
+    
+//RETURNS USERNAME THAT THE MANAGER HAS TYPED IN
+    public String getuserName(){
+        return userName;
+    }
+    
+//ALLOWS FOR MANUAL INPUT FOR THE MANAGER TO ENTER THEIR USERNAME
+    public String setuserName(String managerUsername){
+        return this.userName = managerUsername;
+    }
+    
+//RETURNS PASSWORD TYPED BY THE MANAGER
+    public String getPassword(){
+        return password;
+    }
+    
+//ALLOWS FOR MANUAL INPUT OF THE PASSWORD FOR THE MANAGER TO ENTER THEIR USERNAME
+    public String setPassword(String managerPassword){
+        return this.password = managerPassword;
+    }
