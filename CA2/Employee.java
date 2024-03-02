@@ -14,3 +14,18 @@ public class Employee {
        public String email;
        public int empNum;
        public static int nextEmpNum = 1;
+
+//EMPLOYEE CONSTRUCTOR
+    public Employee(){
+        name = "";
+        email = "";
+    }
+    
+//EMPLOYEE INITILIAZED CONSTRUCTOR
+    public Employee(String empName, String empEmail, int empIDNum){
+        name = empName;
+        email = empEmail;
+        empNum = empIDNum;
+        nextEmpNum++;
+        
+    }
