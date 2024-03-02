@@ -39,3 +39,8 @@ public class Employee {
     public String getEmail(String email) {
 	return email;
     }
+
+//EMPLOYEE METHOD THAT ALLOWS FOR MANUAL SETTING OF THE EMAIL FOR THE EMPLOYEE
+    public String setEmail(String email) {
+	return this.email = email;
+    }
