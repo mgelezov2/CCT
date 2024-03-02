@@ -77,3 +77,10 @@ if(empObject1Email.contains("@gmail.com") && empObject2Email.contains("@gmail.co
         }
         
 }
+
+//WHERE THE EMPLOYEE TEST IS CALLED TO RUN
+    public static void main(String[] args) {
+           EmployeeTest.mainCall();
+    }
+}
+
