@@ -85,8 +85,8 @@ public class JavaMYSQLConnection {
             int user_choice = col_userInput.nextInt();
             col_userInput.nextLine();
             switch (user_choice) {
-                    case 1:
-           while(CourseRep_output.next()){
+             case 1:
+                while(CourseRep_output.next()){
                
                String moduleName = CourseRep_output.getString("module_name"), programName = CourseRep_output.getString("program_name"), 
                       lecturerName = CourseRep_output.getString("lecturer_name"), roomLocation = CourseRep_output.getString("classroom_location");
@@ -105,7 +105,27 @@ public class JavaMYSQLConnection {
             CourseRep.flush();
             CourseRep.close();
             break;
+                    
+            case 2:
+            //STUDENT REPORT GENERATOR
+             while(StudentRep_output.next()){
+                String studentName = StudentRep_output.getString("student_name"), studentID = StudentRep_output.getString("student_number"),
+                        takenProgramme = StudentRep_output.getString("taken_program"), enrolledModule = StudentRep_output.getString("enrolled_module"), 
+                        moduleCompleted = StudentRep_output.getString("module_completed"), moduleFailed = StudentRep_output.getString("module_repeat");
+            
+                StudentsRep.append((studentName)).append(",");
+                StudentsRep.append((studentID)).append(",");
+                StudentsRep.append((takenProgramme)).append(",");
+                StudentsRep.append((enrolledModule)).append(",");
+                StudentsRep.append((moduleCompleted)).append(",");
+                StudentsRep.append((moduleFailed)).append("\n");
+                collegeReportGeneration("StudentReport.csv");
+             }
+             StudentsRep.flush();
+             StudentsRep.close();
+            break;
             }
+            
     }
 }
     }
