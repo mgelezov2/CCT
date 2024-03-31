@@ -47,5 +47,10 @@ public class JavaMYSQLConnection {
         FileWriter moduleRepID = new FileWriter("module_report_by_id.csv");
         Connection displayConsole_connection = DriverManager.getConnection(MySQL_url, MySQL_user, MySQL_pass);
         System.out.println("Database Connected!");
+        String CourseRepRequest = 
+                "SELECT course.moduleName AS module_name, course.programName AS program_name, course.modulePopulation AS enrolled_students, lecturer.lecturerName AS lecturer_name, CASE WHEN course.roomLocation = '' "
+                + "THEN 'Online'ELSE course.roomLocation END AS classroom_location FROM Courses course INNER JOIN Lecturers lecturer ON course.lecturerID = lecturer.lecturerID;";
+        PreparedStatement CourseReportStat = displayConsole_connection.prepareStatement(CourseRepRequest);
+        ResultSet CourseRep_output = CourseReportStat.executeQuery();
     }
 }
