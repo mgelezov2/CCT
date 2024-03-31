@@ -52,5 +52,10 @@ public class JavaMYSQLConnection {
                 + "THEN 'Online'ELSE course.roomLocation END AS classroom_location FROM Courses course INNER JOIN Lecturers lecturer ON course.lecturerID = lecturer.lecturerID;";
         PreparedStatement CourseReportStat = displayConsole_connection.prepareStatement(CourseRepRequest);
         ResultSet CourseRep_output = CourseReportStat.executeQuery();
+        String StudentRepRequest = 
+                "SELECT student.studentName AS student_name, student.studentID AS student_number, course.programName AS taken_program, GROUP_CONCAT(DISTINCT enrolled.moduleID) AS enrolled_module,GROUP_CONCAT(DISTINCT CASE WHEN grades.passed_module_ID IS NOT NULL THEN CONCAT(grades.passed_module_ID, ': ', grades.grades_pass) ELSE NULL END) AS module_completed, GROUP_CONCAT(DISTINCT grades.failed_module_id) "
+                + "AS module_repeat FROM Students student LEFT JOIN  Enrollments enrolled ON student.studentID = enrolled.studentID LEFT JOIN Courses course ON enrolled.programID = course.programID LEFT JOIN Grades grades ON student.studentID = grades.studentID AND enrolled.moduleID = grades.moduleID GROUP BY student.studentName, student.studentID, course.programName;";
+        PreparedStatement StudentReportStat = displayConsole_connection.prepareStatement(StudentRepRequest);
+        ResultSet StudentRep_output = StudentReportStat.executeQuery();
     }
 }
