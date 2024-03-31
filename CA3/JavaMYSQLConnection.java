@@ -40,7 +40,11 @@ public class JavaMYSQLConnection {
             }
     }
     private static void displayConsole(){
-        
+        try {
+        FileWriter CourseRep = new FileWriter("CourseReport.csv");
+        FileWriter StudentsRep = new FileWriter("StudentReport.csv");
+        FileWriter LecturersRep = new FileWriter("LecturersReport.csv");
+        FileWriter moduleRepID = new FileWriter("module_report_by_id.csv");
 
     }
 }
