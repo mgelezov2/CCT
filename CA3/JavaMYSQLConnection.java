@@ -210,4 +210,7 @@ public class JavaMYSQLConnection {
             e.printStackTrace();
         }
     }
+    private static void collegeReportGeneration(String reportFormat){
+        System.out.println("Please wait while we're generating your report... " + reportFormat);
+    }
 }
