@@ -242,4 +242,10 @@ public class JavaMYSQLConnection {
                 System.out.println("ERROR: Please choose between 1 and 5 options");
         }
     }
+    private static void manageUser_AddUser(){
+        System.out.println("Enter a user you wish to add: ");
+        String addedUser = col_userInput.nextLine();
+        userManagement.add(addedUser);
+        System.out.println("User " + addedUser + " added");
+    }
 }
