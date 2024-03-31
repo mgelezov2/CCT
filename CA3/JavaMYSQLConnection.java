@@ -57,5 +57,10 @@ public class JavaMYSQLConnection {
                 + "AS module_repeat FROM Students student LEFT JOIN  Enrollments enrolled ON student.studentID = enrolled.studentID LEFT JOIN Courses course ON enrolled.programID = course.programID LEFT JOIN Grades grades ON student.studentID = grades.studentID AND enrolled.moduleID = grades.moduleID GROUP BY student.studentName, student.studentID, course.programName;";
         PreparedStatement StudentReportStat = displayConsole_connection.prepareStatement(StudentRepRequest);
         ResultSet StudentRep_output = StudentReportStat.executeQuery();
+        String LecturerRepRequest = 
+                "SELECT LecturerName AS lecturer_name, LecturerRole AS lecturer_role,GROUP_CONCAT(Courses.moduleName) AS undergoing_modules, SUM(Courses.modulePopulation) "
+                + "AS current_student_total, GROUP_CONCAT(Courses.programName) AS undergoing_classes FROM Lecturers JOIN Courses ON Lecturers.lecturerID = Courses.lecturerID GROUP BY Lecturers.lecturerID, LecturerName, LecturerRole;";
+        PreparedStatement LecturerReportStatement = displayConsole_connection.prepareStatement(LecturerRepRequest);
+        ResultSet LecturerRep_output = LecturerReportStatement.executeQuery();
     }
 }
