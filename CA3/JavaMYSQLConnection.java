@@ -182,6 +182,13 @@ public class JavaMYSQLConnection {
             moduleRepID.flush();
             moduleRepID.close();
             break;
+        case 5:
+            System.out.println("Please enter your new password");
+            String changingToNewPass = col_userInput.nextLine();          
+            String changeToNewPass = "UPDATE users SET colUser_password = '" +changingToNewPass+"' WHERE colUser_login_name = '" +user+"';";
+            PreparedStatement PreparedchangeToNewPassStatement = displayConsole_connection.prepareStatement(changeToNewPass);
+            PreparedchangeToNewPassStatement.executeUpdate();
+            break;
             }
             
     }
