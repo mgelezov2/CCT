@@ -62,5 +62,27 @@ public class JavaMYSQLConnection {
                 + "AS current_student_total, GROUP_CONCAT(Courses.programName) AS undergoing_classes FROM Lecturers JOIN Courses ON Lecturers.lecturerID = Courses.lecturerID GROUP BY Lecturers.lecturerID, LecturerName, LecturerRole;";
         PreparedStatement LecturerReportStatement = displayConsole_connection.prepareStatement(LecturerRepRequest);
         ResultSet LecturerRep_output = LecturerReportStatement.executeQuery();
+        while (true){
+            if (user.equals("admin")) {
+                    System.out.println("5: Change password");
+                    System.out.println("6: Log out");
+                    System.out.println("7: Manage users");
+                }
+                if (user.equals("office")) {
+                    System.out.println("1: Generate a Course Report");
+                    System.out.println("2: Generate a Student Report");
+                    System.out.println("3: Generate a Lecturer Report");
+                    System.out.println("4: Generate a Module Report through an ID");
+                    System.out.println("5: Change password");
+                    System.out.println("6: Log out");
+                }
+                if (user.equals("lecturer")) {
+                    System.out.println("3: Generate a Lecturer Report");
+                    System.out.println("5: Change password");
+                    System.out.println("6: Log out");
+                }
+            System.out.println("Select an option: ");
+            int user_choice = col_userInput.nextInt();
+            col_userInput.nextLine();
     }
 }
