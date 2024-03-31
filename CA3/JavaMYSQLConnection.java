@@ -214,6 +214,12 @@ public class JavaMYSQLConnection {
         System.out.println("Please wait while we're generating your report... " + reportFormat);
     }
     private static void collegeManageUsers(){
-        
+        System.out.println("1: Add a user");
+        System.out.println("2: Delete a user");
+        System.out.println("3: Update a user");
+        System.out.println("4: View users");
+        System.out.println("5: Go back to main menu");
+        int manageUserChoice = col_userInput.nextInt();
+        col_userInput.nextLine();
     }
 }
