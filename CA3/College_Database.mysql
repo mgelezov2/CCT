@@ -5,3 +5,7 @@ CREATE TABLE College_Database.users (
 	colUser_login_name varchar(30) NOT NULL,
 	colUser_password varchar(16) NOT NULL
 );
+
+INSERT INTO users(colUser_id,colUser_full_name,colUser_role,colUser_login_name,colUser_password)VALUES('U003','','lecturer','','');
+INSERT INTO users(colUser_id,colUser_full_name,colUser_role,colUser_login_name,colUser_password)VALUES('U002','','admin','','');
+INSERT INTO users(colUser_id,colUser_full_name,colUser_role,colUser_login_name,colUser_password)VALUES('U001','','office','','');
