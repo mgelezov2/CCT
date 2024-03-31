@@ -39,4 +39,8 @@ public class JavaMYSQLConnection {
             }
             }
     }
+    private static void displayConsole(){
+        
+
+    }
 }
