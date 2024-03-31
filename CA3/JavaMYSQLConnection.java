@@ -200,6 +200,8 @@ public class JavaMYSQLConnection {
                 System.out.println("ERROR: You do not have permission for this user");
             }
             break;
+            default:
+            System.out.println("ERROR: Please choose between 1 and 6 options");
             }
             
     }
