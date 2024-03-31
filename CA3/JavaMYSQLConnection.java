@@ -258,4 +258,18 @@ public class JavaMYSQLConnection {
             System.out.println("ERROR: This user does not exist within this College");
         }
     }
+    private static void manageUser_UpdateUser(){
+        System.out.println("Please enter a user name you wish to change: ");
+        String currentUser = col_userInput.nextLine();
+        System.out.println("Please enter the username you wish to change your old user name to: ");
+        String newUser = col_userInput.nextLine();
+        if(userManagement.contains(currentUser)){
+            userManagement.remove(currentUser);
+            userManagement.add(newUser);
+            System.out.println("You have changed your old username to " + newUser);
+            
+        }else{
+            System.out.println("ERROR: This user does not exist within this College");
+        }
+    }
 }
