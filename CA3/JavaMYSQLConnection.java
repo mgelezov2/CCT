@@ -205,6 +205,9 @@ public class JavaMYSQLConnection {
             }
             
     }
-}
+}catch (IOException | SQLException e) {
+            System.out.println("Connection Failure!");
+            e.printStackTrace();
+        }
     }
 }
