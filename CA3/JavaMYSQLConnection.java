@@ -213,4 +213,7 @@ public class JavaMYSQLConnection {
     private static void collegeReportGeneration(String reportFormat){
         System.out.println("Please wait while we're generating your report... " + reportFormat);
     }
+    private static void collegeManageUsers(){
+        
+    }
 }
