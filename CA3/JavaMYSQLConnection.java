@@ -248,4 +248,14 @@ public class JavaMYSQLConnection {
         userManagement.add(addedUser);
         System.out.println("User " + addedUser + " added");
     }
+    private static void manageUser_removeUser(){
+        System.out.println("Enter a user you wish to remove: ");
+        String userToBeRemoved = col_userInput.nextLine();
+        if(userManagement.contains(userToBeRemoved)){
+            userManagement.remove(userToBeRemoved);
+            System.out.println("User " + userToBeRemoved + " removed");
+        }else{
+            System.out.println("ERROR: This user does not exist within this College");
+        }
+    }
 }
