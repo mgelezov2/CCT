@@ -84,5 +84,29 @@ public class JavaMYSQLConnection {
             System.out.println("Select an option: ");
             int user_choice = col_userInput.nextInt();
             col_userInput.nextLine();
+            switch (user_choice) {
+                    case 1:
+           while(CourseRep_output.next()){
+               
+               String moduleName = CourseRep_output.getString("module_name"), programName = CourseRep_output.getString("program_name"), 
+                      lecturerName = CourseRep_output.getString("lecturer_name"), roomLocation = CourseRep_output.getString("classroom_location");
+               int enrolledStudents = CourseRep_output.getInt("enrolled_students");
+               
+
+               CourseRep.append((moduleName)).append(",");
+               CourseRep.append((programName)).append(",");
+               CourseRep.append(String.valueOf(enrolledStudents)).append(",");
+               CourseRep.append((lecturerName)).append(",");
+               CourseRep.append((roomLocation)).append("\n");
+               collegeReportGeneration("CourseReport.csv");
+               
+               
+            }
+            CourseRep.flush();
+            CourseRep.close();
+            break;
+            }
+    }
+}
     }
 }
