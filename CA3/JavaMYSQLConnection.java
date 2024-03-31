@@ -107,7 +107,7 @@ public class JavaMYSQLConnection {
             break;
                     
             case 2:
-            //STUDENT REPORT GENERATOR
+            
              while(StudentRep_output.next()){
                 String studentName = StudentRep_output.getString("student_name"), studentID = StudentRep_output.getString("student_number"),
                         takenProgramme = StudentRep_output.getString("taken_program"), enrolledModule = StudentRep_output.getString("enrolled_module"), 
@@ -123,6 +123,24 @@ public class JavaMYSQLConnection {
              }
              StudentsRep.flush();
              StudentsRep.close();
+             break;
+            case 3:
+            
+             while(LecturerRep_output.next()){
+               String lecturerName = LecturerRep_output.getString("lecturer_name"), lecturerRole = LecturerRep_output.getString("lecturer_role"), 
+                      runningModules = LecturerRep_output.getString("undergoing_modules"), runningClasses = LecturerRep_output.getString("undergoing_classes") ;
+               int total_of_students = LecturerRep_output.getInt("current_student_total");
+               
+               LecturersRep.append((lecturerName)).append(",");
+               LecturersRep.append((lecturerRole)).append(",");
+               LecturersRep.append((runningModules)).append(",");
+               LecturersRep.append(String.valueOf(total_of_students)).append(",");
+               LecturersRep.append((runningClasses)).append("\n");
+               collegeReportGeneration("LecturerReport.csv");
+            }
+            LecturersRep.flush();
+            LecturersRep.close();
+            
             break;
             }
             
