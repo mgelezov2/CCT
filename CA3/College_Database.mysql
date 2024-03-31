@@ -9,3 +9,7 @@ CREATE TABLE College_Database.users (
 INSERT INTO users(colUser_id,colUser_full_name,colUser_role,colUser_login_name,colUser_password)VALUES('U003','','lecturer','','');
 INSERT INTO users(colUser_id,colUser_full_name,colUser_role,colUser_login_name,colUser_password)VALUES('U002','','admin','','');
 INSERT INTO users(colUser_id,colUser_full_name,colUser_role,colUser_login_name,colUser_password)VALUES('U001','','office','','');
+
+UPDATE users SET colUser_full_name = 'Steven Steward', colUser_role = 'admin',colUser_login_name='admin' ,colUser_password = 'java' WHERE colUser_id = 'U001';
+UPDATE users SET colUser_full_name = 'Kyle Barley', colUser_role = 'lecturer',colUser_login_name='lecturer' ,colUser_password = 'java' WHERE colUser_id = 'U002';
+UPDATE users SET colUser_full_name = 'Lee Ryle', colUser_role = 'office',colUser_login_name='office' ,colUser_password = 'java' WHERE colUser_id = 'U003';
