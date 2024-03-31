@@ -142,6 +142,46 @@ public class JavaMYSQLConnection {
             LecturersRep.close();
             
             break;
+          case 4:
+               System.out.println("Please Enter a Module ID you wish to view: ");
+               String moduleId = col_userInput.nextLine();
+               String moduleColumn_titles = "Module ID,Module Name,Lecturer Name,Location,Student Name\n";
+               moduleRepID.write(moduleColumn_titles);
+                       
+               String studentIdByModuleQuery = "SELECT studentID FROM Grades WHERE moduleID = '" +moduleId+ "'";
+               PreparedStatement PreparedStudentIdBymoduleIdStatement = displayConsole_connection.prepareStatement(studentIdByModuleQuery);
+               ResultSet studentIdByModuleIdSet = PreparedStudentIdBymoduleIdStatement.executeQuery();
+                   while (studentIdByModuleIdSet.next()) {
+                           String studentId = studentIdByModuleIdSet.getString("studentID");
+                           moduleRepID.append((moduleId)).append(",");
+                           String moduleNameQuery = "SELECT moduleName, lecturerID, roomLocation FROM Courses WHERE moduleID = '" +moduleId+ "'";
+                           PreparedStatement PreparedModuleNameStatement = displayConsole_connection.prepareStatement(moduleNameQuery);
+                           ResultSet moduleNameSet = PreparedModuleNameStatement.executeQuery();
+                            if (moduleNameSet.next()) {
+                                String moduleName = moduleNameSet.getString("moduleName");
+                                moduleRepID.append((moduleName)).append(",");
+                                String lecturerId = moduleNameSet.getString("lecturerID");
+                                String lecturerNameQuery = "SELECT lecturerName FROM Lecturers WHERE lecturerID = '" +lecturerId+ "'";
+                                PreparedStatement PreparedLecturerNameStatement = displayConsole_connection.prepareStatement(lecturerNameQuery);
+                                ResultSet lecturerNameSet = PreparedLecturerNameStatement.executeQuery();
+                                if (lecturerNameSet.next()) {
+                                    String lecturerName = lecturerNameSet.getString("lecturerName");
+                                    moduleRepID.append((lecturerName)).append(",");
+                                    }                                    
+                                String location = moduleNameSet.getString("roomLocation");
+                                moduleRepID.append((location)).append(",");
+                                }
+                String studentNameQuery = "SELECT studentName FROM Students WHERE studentID = '" +studentId+ "'";
+                PreparedStatement PreparedStudentNameStatement = displayConsole_connection.prepareStatement(studentNameQuery);
+                ResultSet studentNameSet = PreparedStudentNameStatement.executeQuery();
+                        if (studentNameSet.next()) {
+                            String studentName = studentNameSet.getString("studentName");
+                            moduleRepID.append((studentName)).append("\n");
+                            }
+            }
+            moduleRepID.flush();
+            moduleRepID.close();
+            break;
             }
             
     }
