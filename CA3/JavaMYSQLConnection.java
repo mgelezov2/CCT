@@ -277,4 +277,14 @@ public class JavaMYSQLConnection {
             System.out.println(listOfUsers);
         }
     }
+    public static void main(String[] args) {
+        try{
+        collegeLogin(MySQL_url, MySQL_user, MySQL_pass);
+        displayConsole();
+        collegeManageUsers();
+        }catch (SQLException e) {
+            System.out.println("Connection Failure!");
+            e.printStackTrace();
+}
+}
 }
