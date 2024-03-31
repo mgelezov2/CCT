@@ -45,6 +45,7 @@ public class JavaMYSQLConnection {
         FileWriter StudentsRep = new FileWriter("StudentReport.csv");
         FileWriter LecturersRep = new FileWriter("LecturersReport.csv");
         FileWriter moduleRepID = new FileWriter("module_report_by_id.csv");
-
+        Connection displayConsole_connection = DriverManager.getConnection(MySQL_url, MySQL_user, MySQL_pass);
+        System.out.println("Database Connected!");
     }
 }
