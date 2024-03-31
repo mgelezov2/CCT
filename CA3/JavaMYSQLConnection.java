@@ -189,6 +189,10 @@ public class JavaMYSQLConnection {
             PreparedStatement PreparedchangeToNewPassStatement = displayConsole_connection.prepareStatement(changeToNewPass);
             PreparedchangeToNewPassStatement.executeUpdate();
             break;
+        case 6:
+            System.out.println("Logging out of College Console");
+            collegeLogin(MySQL_url, MySQL_user, MySQL_pass);
+            break;
             }
             
     }
