@@ -193,6 +193,13 @@ public class JavaMYSQLConnection {
             System.out.println("Logging out of College Console");
             collegeLogin(MySQL_url, MySQL_user, MySQL_pass);
             break;
+        case 7: 
+            if (user.equals("admin")){
+                collegeManageUsers();
+            }else{
+                System.out.println("ERROR: You do not have permission for this user");
+            }
+            break;
             }
             
     }
