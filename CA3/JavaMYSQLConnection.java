@@ -221,5 +221,25 @@ public class JavaMYSQLConnection {
         System.out.println("5: Go back to main menu");
         int manageUserChoice = col_userInput.nextInt();
         col_userInput.nextLine();
+        switch(manageUserChoice){
+            case 1:
+                manageUser_AddUser();
+                break;
+            case 2:
+                manageUser_removeUser();
+                break;
+            case 3:
+                manageUser_UpdateUser();
+                break;
+            case 4:
+                manageUser_ViewUser();
+                break;
+            case 5:
+                System.out.println("Redirecting back to main menu..");
+                displayConsole();
+                break;
+            default:
+                System.out.println("ERROR: Please choose between 1 and 5 options");
+        }
     }
 }
