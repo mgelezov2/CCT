@@ -1,3 +1,11 @@
+package ca3_ooa;
+import java.io.*;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import static javax.lang.model.type.TypeKind.NULL;
+
 public class JavaMYSQLConnection {
     private static String MySQL_url = "";
     private static String MySQL_user = "";
