@@ -272,4 +272,9 @@ public class JavaMYSQLConnection {
             System.out.println("ERROR: This user does not exist within this College");
         }
     }
+    private static void manageUser_ViewUser(){
+        for (String listOfUsers : userManagement){
+            System.out.println(listOfUsers);
+        }
+    }
 }
