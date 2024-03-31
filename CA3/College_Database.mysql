@@ -1,1 +1,7 @@
-
+CREATE TABLE College_Database.users (
+	colUser_id varchar(5) NOT NULL,
+	colUser_full_name varchar(20) NOT NULL,
+	colUser_role varchar(30) NOT NULL,
+	colUser_login_name varchar(30) NOT NULL,
+	colUser_password varchar(16) NOT NULL
+);
